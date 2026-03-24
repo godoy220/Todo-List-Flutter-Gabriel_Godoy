@@ -11,7 +11,7 @@ Aplicativo desenvolvido em Flutter como atividade prática da disciplina de Dese
 
 | Lista Vazia | Com Tarefas Pendentes | Tarefas Concluídas |
 | :---: | :---: | :---: |
-| ![Vazia](./screenshots/vazia.png) | ![Pendentes](./screenshots/pendentes.png) | ![Concluidas](./screenshots/concluidas.png) |
+| ![Vazia](./screenshots/vazio.png) | ![Pendentes](./screenshots/pendente.png) | ![Concluidas](./screenshots/concluido.png) |
 
 ---
 
