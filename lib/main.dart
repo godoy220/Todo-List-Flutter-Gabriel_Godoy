@@ -21,7 +21,7 @@ class MeuApp extends StatelessWidget {
   }
 }
 
-// Classe Tarefa conforme o requisito técnico
+// Classe Tarefa
 class Tarefa {
   String titulo;
   bool concluida;
@@ -29,7 +29,7 @@ class Tarefa {
   Tarefa({required this.titulo, this.concluida = false});
 }
 
-// Uso obrigatório de StatefulWidget para o widget principal
+// Uso de StatefulWidget para o widget principal
 class TodoListScreen extends StatefulWidget {
   const TodoListScreen({super.key});
 
@@ -44,7 +44,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
   // Controller para gerenciar o TextField
   final TextEditingController _controller = TextEditingController();
 
-  // Implementação obrigatória do dispose() para limpar o controller
+  // Implementação do dispose() para limpar o controller
   @override
   void dispose() {
     _controller.dispose();
@@ -64,7 +64,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
     _controller.clear();
   }
 
-  // Função para alternar o status da tarefa (marcar como concluída)
+  // Função para alternar o status da tarefa
   void _alternarStatusTarefa(int index) {
     setState(() {
       _tarefas[index].concluida = !_tarefas[index].concluida;
@@ -78,7 +78,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
     });
   }
 
-  // Funcionalidade Bônus: Botão para limpar todas as tarefas concluídas
+  // Botão para limpar todas as tarefas concluídas
   void _limparTarefasConcluidas() {
     setState(() {
       _tarefas.removeWhere((tarefa) => tarefa.concluida);
@@ -87,7 +87,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Calculando o bônus: Contador de tarefas
+    // Contador de tarefas
     int tarefasConcluidas = _tarefas.where((t) => t.concluida).length;
 
     // Scaffold + AppBar como estrutura básica
@@ -97,7 +97,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
         actions: [
-          // Botão bônus para limpar concluídas
+          // Botão para limpar concluídas
           IconButton(
             icon: const Icon(Icons.cleaning_services),
             tooltip: 'Limpar Concluídas',
@@ -107,7 +107,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
       ),
       body: Column(
         children: [
-          // Funcionalidade Bônus: Contador mostrando total e concluídas
+          // Contador mostrando total e concluídas
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -167,7 +167,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
                       
                       return Card(
                         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                        // Bônus: Cores diferentes para pendentes e concluídas
+                        //  Cores diferentes para pendentes e concluídas
                         color: tarefa.concluida ? Colors.green.shade50 : Colors.white,
                         child: ListTile(
                           // Checkbox ao lado de cada tarefa
@@ -185,7 +185,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
                               color: tarefa.concluida ? Colors.grey : Colors.black,
                             ),
                           ),
-                          // Botão de delete (lixeira) ao lado de cada tarefa
+                          // Botão de delete ao lado de cada tarefa
                           trailing: IconButton(
                             icon: const Icon(Icons.delete, color: Colors.red),
                             onPressed: () => _removerTarefa(index),
