@@ -36,4 +36,4 @@ Aplicativo desenvolvido em Flutter como atividade prática da disciplina de Dese
 1. Certifique-se de ter o [Flutter SDK](https://docs.flutter.dev/get-started/install) instalado.
 2. Clone este repositório:
    ```bash
-   git clone [URL_DO_SEU_REPOSITORIO]
+   git clone https://github.com/godoy220/Todo-List-Flutter-Gabriel_Godoy
